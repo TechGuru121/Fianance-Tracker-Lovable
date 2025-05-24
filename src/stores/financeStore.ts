@@ -41,10 +41,10 @@ interface FinanceState {
   updateTransaction: (id: string, transaction: Partial<Transaction>) => void;
   deleteTransaction: (id: string) => void;
   setSelectedCategory: (category: string) => void;
-  filteredTransactions: Transaction[];
-  totalIncome: number;
-  totalExpenses: number;
-  balance: number;
+  getFilteredTransactions: () => Transaction[];
+  getTotalIncome: () => number;
+  getTotalExpenses: () => number;
+  getBalance: () => number;
 }
 
 export const useFinanceStore = create<FinanceState>()(
@@ -110,29 +110,29 @@ export const useFinanceStore = create<FinanceState>()(
         set({ selectedCategory: category });
       },
 
-      get filteredTransactions() {
+      getFilteredTransactions: () => {
         const { transactions, selectedCategory } = get();
         if (selectedCategory === 'All') return transactions;
         return transactions.filter((t) => t.category === selectedCategory);
       },
 
-      get totalIncome() {
+      getTotalIncome: () => {
         const { transactions } = get();
         return transactions
           .filter((t) => t.type === 'income')
           .reduce((sum, t) => sum + t.amount, 0);
       },
 
-      get totalExpenses() {
+      getTotalExpenses: () => {
         const { transactions } = get();
         return transactions
           .filter((t) => t.type === 'expense')
           .reduce((sum, t) => sum + t.amount, 0);
       },
 
-      get balance() {
-        const { totalIncome, totalExpenses } = get();
-        return totalIncome - totalExpenses;
+      getBalance: () => {
+        const { getTotalIncome, getTotalExpenses } = get();
+        return getTotalIncome() - getTotalExpenses();
       }
     }),
     {

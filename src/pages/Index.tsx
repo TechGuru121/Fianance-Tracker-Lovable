@@ -14,8 +14,12 @@ import { useTheme } from '@/hooks/useTheme';
 
 const Index = () => {
   const [isAddTransactionOpen, setIsAddTransactionOpen] = useState(false);
-  const { transactions, totalIncome, totalExpenses, balance } = useFinanceStore();
+  const { transactions, getTotalIncome, getTotalExpenses, getBalance } = useFinanceStore();
   const { theme, toggleTheme } = useTheme();
+
+  const totalIncome = getTotalIncome();
+  const totalExpenses = getTotalExpenses();
+  const balance = getBalance();
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 transition-all duration-300">

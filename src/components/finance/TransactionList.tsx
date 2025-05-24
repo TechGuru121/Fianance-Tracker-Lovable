@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -12,9 +11,10 @@ interface TransactionListProps {
 }
 
 export const TransactionList = ({ limit }: TransactionListProps) => {
-  const { filteredTransactions, deleteTransaction } = useFinanceStore();
+  const { getFilteredTransactions, deleteTransaction } = useFinanceStore();
   const [editingTransaction, setEditingTransaction] = useState<Transaction | null>(null);
 
+  const filteredTransactions = getFilteredTransactions();
   const displayTransactions = limit 
     ? filteredTransactions.slice(0, limit)
     : filteredTransactions;
