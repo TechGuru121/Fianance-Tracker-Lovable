@@ -1,8 +1,11 @@
-# Welcome to your Lovable project
+![image](https://github.com/user-attachments/assets/6d21610e-8bfd-40d2-85bd-09c8dfd1aebc)# Welcome to your Lovable project
 
 ## Project info
 
-**URL**: https://lovable.dev/projects/604b015b-caf1-42e1-a29b-f3a735f2d585
+#Output
+![image](https://github.com/user-attachments/assets/96f90f6a-d23c-433b-9a80-bfada54ec598)
+
+
 
 ## How can I edit this code?
 
