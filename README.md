@@ -3,9 +3,10 @@
 ## Project info
 
 #Output
-![image](https://github.com/user-attachments/assets/96f90f6a-d23c-433b-9a80-bfada54ec598)
-
-
+#Transactions
+![image](https://github.com/user-attachments/assets/119120ec-5ba5-4967-8954-fc11e353782f)
+#DArk toggle mode
+![image](https://github.com/user-attachments/assets/3bc2e9e1-a924-48c2-882d-ea4a3afe5ed6)
 
 ## How can I edit this code?
 
